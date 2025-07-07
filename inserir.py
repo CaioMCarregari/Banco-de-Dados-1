@@ -160,11 +160,12 @@ def menu_inserir (conn, cur):
                 print("Selecione um dos motoristas abaixo para a carona: \n")
                 cabecalho = ["ID_MOTORISTA", "NOME_MOTORISTA", "ID_VEICULO", "MODELO", "PLACA", "ANO", "COR"]
                 imprimir(cabecalho, carona)
-                id_motorista = int(input("Digite o id do Motorista: \n"))
-                print("\n")
                 
-                id = -1
-                while(id == -1):
+                
+                id_veiculo = -1
+                while(id_veiculo == -1):
+                    id_motorista = int(input("Digite o id do Motorista: \n"))
+                    print("\n")
                     id_veiculo = int(verificar_id(id_motorista, carona, 2))
                     if (id_veiculo == -1):
                         print("Id do motorista nao valido\n")
@@ -246,7 +247,7 @@ def menu_inserir (conn, cur):
             
             id = -1 
             while(id == -1):
-                id_passageiro = int(input("Digite o id do passageiro escolhido"))
+                id_passageiro = int(input("Digite o id do passageiro escolhido: \n"))
                 id = verificar_id(id_passageiro, passageiro, 0)
                 if(id == -1):
                     print("O id do passageiro esta incorreto\n")
@@ -263,7 +264,7 @@ def menu_inserir (conn, cur):
             
             id = -1
             while(id == -1):
-                id_carona = int(input("Digite o id da caorna escolhida"))
+                id_carona = int(input("Digite o id da caorna escolhida: \n"))
                 id = verificar_id(id_carona, carona, 2)
                 if(id == -1):
                     print("O id do passageiro esta incorreto\n")
@@ -318,7 +319,7 @@ def menu_inserir (conn, cur):
             placa = input("Digite a placa do carro: \n")
             ano = int(input("Digite o ano do carro: \n"))
             cor = input("Digite a cor do carro: \n")
-            capacidade_passageiro = int(input("Quantos leitoes cabe nesse possante: \n"))
+            capacidade_passageiro = int(input("Quantos passageiros cabem: \n"))
             
             print("Selecione um dos motoristas abaixo para a carona: \n")
             motoristas = listar_motoristas(cur)

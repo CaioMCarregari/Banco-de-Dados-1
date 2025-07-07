@@ -1,6 +1,7 @@
 from psycopg2 import Error
 from juncao import *
 from listar import *
+from inserir import*
 
 def remover_carona(conn, cur, id_carona):
     try:
@@ -113,7 +114,13 @@ def menu_remover(conn, cur):
 
             cabecalho = ["ID_CARONA", "ORIGEM", "DESTINO", "DISTANCIA_KM", "DURACAO_MINUTOS", "ID_MOTORISTA", "ID_VEICULO"]
             imprimir(cabecalho, carona)
-            id_carona = int(input("Digite o id da carona escolhida"))
+
+            id = -1
+            while(id == -1):
+                id_carona = int(input("Digite o id da carona escolhida\n"))
+                id = verificar_id(id_carona, carona, 0)
+                if (id == -1):
+                    print("O id do carona nao existe\n")
 
             remover_carona(conn, cur, id_carona)
 
@@ -130,6 +137,13 @@ def menu_remover(conn, cur):
             imprimir(cabecalho, motoristas)
             id_motorista = int(input("Digite o id do motorista escolhido: \n"))
 
+            id = -1
+            while(id == -1):
+                id_motorista = int(input("Digite o id do motorista escolhido: \n"))
+                id = verificar_id(id_motorista, motoristas, 0)
+                if (id == -1):
+                    print("O id do motorista nao existe\n")
+
             remover_motoristas(conn, cur, id_motorista)
 
         case 3:
@@ -143,7 +157,13 @@ def menu_remover(conn, cur):
 
             cabecalho = ["ID_PAGAMENTO", "VALOR"]
             imprimir(cabecalho, pagamento)
-            id_pagamento = int(input("Digite o id do pagamento escolhido: \n"))
+
+            id = -1
+            while(id == -1):
+                id_pagamento = int(input("Digite o id do pagamento escolhido: \n"))
+                id = verificar_id(id_pagamento, pagamento, 0)
+                if (id == -1):
+                    print("O id do pagamento nao existe\n")
 
             remover_pagamento(conn, cur, id_pagamento)
 
@@ -175,6 +195,13 @@ def menu_remover(conn, cur):
             cabecalho = ["ID_PASSAGEIRO", "CPF", "NOME"]
             imprimir(cabecalho, passageiro)
             id_passageiro = int(input("Digite o id do passageiro escolhido"))
+
+            id = -1
+            while(id == -1):
+                id_passageiro = int(input("Digite o id do passageiro escolhido: \n"))
+                id = verificar_id(id_passageiro, passageiro, 0)
+                if (id == -1):
+                    print("O id do passageiro nao existe\n")
 
             remover_passageiro(conn, cur, id_passageiro)
         
@@ -222,6 +249,13 @@ def menu_remover(conn, cur):
             cabecalho = ["id_veiculo", "modelo", "placa", "ano", "cor", "capacidade_passageiro"]
             imprimir(cabecalho, veiculos)
             id_veiculo = int(input("Digite o id do veiculo escolhido: \n"))
+
+            id = -1
+            while(id == -1):
+                id_veiculo = int(input("Digite o id do veiculo escolhido: \n"))
+                id = verificar_id(id_veiculo, veiculos, 0)
+                if (id == -1):
+                    print("O id do veiculo nao existe\n")
 
             remover_veiculo(conn, cur, id_veiculo)
 

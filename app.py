@@ -34,5 +34,5 @@ if __name__ == "__main__":
                     break
 
     else:
-        print("Erro ao conectar com banco de dados")
+        print("Erro ao conectar como banco de dados")
     
