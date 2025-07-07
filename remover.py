@@ -100,7 +100,7 @@ def remover_veiculo(conn, cur, id_veiculo):
         print(f"Erro ao remover veiculo: {e}")
 
 def menu_remover(conn, cur):
-    opca2 = int(input("Escolha uma das opcoes: \n 1 - carona\n 2 - motoristas\n 3 - pagamento\n 4 - pagar\n 5 - passageiros\n 6 - pedido\n 7 - recebe\n 8 - veiculos \n"))
+    opca2 = int(input("Escolha uma das opcoes: \n 1 - carona\n 2 - motoristas\n 3 - pagamento\n 4 - pagar\n 5 - passageiros\n 6 - pedido\n 7 - recebe\n 8 - veiculos\n 9 - voltar\n"))
     
     match opca2:
         case 1: 
@@ -259,4 +259,9 @@ def menu_remover(conn, cur):
 
             remover_veiculo(conn, cur, id_veiculo)
 
-        case _: print("opcao invalida\n")
+        case 9:
+            print("Voltar\n")
+            return
+        
+        case _:
+            print("opção inválida\n")

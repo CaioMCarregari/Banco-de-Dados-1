@@ -31,8 +31,8 @@ if __name__ == "__main__":
                     menu_subconsultas(cur)
                 
                 case 6:
+                    print(f"Programa encerrado\n")
                     break
-
-    else:
-        print("Erro ao conectar como banco de dados")
-    
+                
+                case _:
+                    print(f"Opção inválida\n")

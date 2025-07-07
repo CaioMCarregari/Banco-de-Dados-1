@@ -175,7 +175,7 @@ def calcular_valor_total_recebido(cur):
         return None
     
 def menu_subconsultas(cur):
-    opcao2 = int(input("Escola uma das opcoes: \n 1 - Carona com maior distancia \n 2 - Carona com menor distancia\n 3 - passageiro que fez o maior pagamento\n 4 - passageiro que fez o menor pagamento\n 5 - Motoristacom mais carona\n 6 - Passageiro com mais viagens\n 7 - Receita total do app\n"))
+    opcao2 = int(input("Escola uma das opcoes: \n 1 - Carona com maior distancia \n 2 - Carona com menor distancia\n 3 - passageiro que fez o maior pagamento\n 4 - passageiro que fez o menor pagamento\n 5 - Motoristacom mais carona\n 6 - Passageiro com mais viagens\n 7 - Receita total do app\n 8 - Voltar\n"))
 
     match opcao2:
         case 1:
@@ -263,4 +263,9 @@ def menu_subconsultas(cur):
             else:
                 print("Nao foi possivel calcular o faturamento devido a um erro.")
         
-        case _: print("opcao invalida")
+        case 8:
+            print("Voltar\n")
+            return
+        
+        case _:
+            print("opção inválida\n")

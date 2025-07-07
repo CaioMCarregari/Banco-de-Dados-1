@@ -135,7 +135,7 @@ def juncao_recebe(cur):
         return []
     
 def menu_juncao (cur):
-    opcao2 = int(input("Escolha uma das opcoes:\n 1 - carona,motoristas e veiculos\n 2 - passageiro e pagamento\n 3 - motorista e pagamento\n 4 - passageiro e carona\n"))
+    opcao2 = int(input("Escolha uma das opcoes:\n 1 - carona,motoristas e veiculos\n 2 - passageiro e pagamento\n 3 - motorista e pagamento\n 4 - passageiro e carona\n 5 - voltar\n"))
 
     match opcao2:
         case 1:
@@ -178,4 +178,9 @@ def menu_juncao (cur):
             cabecalho = ["ID_PASSAGEIRO", "NOME_PASSAGEIRO", "ID_CARONA", "ORIGEM", "DESTINO", "DATA_HORA_PEDIDO"]
             imprimir(cabecalho, pedido)
 
-        case _: print("opcao invalida")
+        case 5:
+            print("Voltar\n")
+            return
+        
+        case _:
+            print("opção inválida\n")

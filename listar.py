@@ -142,7 +142,7 @@ def listar_recebe_disponiveis(cur):
     
     
 def menu_listar(cur):
-    opcao2 = int(input("Escolha uma das opcoes: \n 1 - carona\n 2 - motoristas\n 3 - pagamento\n 4 - pagar\n 5 - passageiros\n 6 - pedido\n 7 - recebe\n 8 - veiculos \n"))
+    opcao2 = int(input("Escolha uma das opcoes: \n 1 - carona\n 2 - motoristas\n 3 - pagamento\n 4 - pagar\n 5 - passageiros\n 6 - pedido\n 7 - recebe\n 8 - veiculos\n 9 - voltar\n"))
                 
     match opcao2:
         case 1:
@@ -225,4 +225,9 @@ def menu_listar(cur):
             cabecalho = ["id_veiculo", "modelo", "placa", "ano", "cor", "capacidade_passageiro", "id_motorista"]
             imprimir(cabecalho, veiculos)
 
-        case _: print("opcao invalida\n")
+        case 9:
+            print("Voltar\n")
+            return
+        
+        case _:
+            print("opção inválida\n")

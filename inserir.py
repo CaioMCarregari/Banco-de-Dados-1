@@ -142,7 +142,7 @@ def verificar_id(id_motorista, carona, num):
 
 def menu_inserir (conn, cur):
      
-    opca2 = int(input("Escolha uma das opcoes: \n 1 - carona\n 2 - motoristas\n 3 - pagamento\n 4 - pagar\n 5 - passageiros\n 6 - pedido\n 7 - recebe\n 8 - veiculos \n"))
+    opca2 = int(input("Escolha uma das opcoes: \n 1 - carona\n 2 - motoristas\n 3 - pagamento\n 4 - pagar\n 5 - passageiros\n 6 - pedido\n 7 - recebe\n 8 - veiculos\n 9 - voltar\n"))
     
     match opca2:
         case 1:
@@ -334,4 +334,9 @@ def menu_inserir (conn, cur):
 
             inserir_veiculos(conn, cur, modelo, placa, ano, cor, capacidade_passageiro, id_motorista)
 
-        case _:print("opcao invalida\n")
+        case 9:
+            print("Voltar\n")
+            return
+        
+        case _:
+            print("opção inválida\n")
